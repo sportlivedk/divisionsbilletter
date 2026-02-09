@@ -41,14 +41,13 @@
             margin-left: 20px;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 16px;
         }
 
         /* --- HERO SEKTION --- */
         .hero-banner {
-            height: 310px;
-            background-color: var(--dark-blue); /* Fallback hvis billedet driller */
-            /* Forsøg at hente fra forside-billede.jpg først, ellers brug et online link */
+            height: 350px; /* Øget en smule for at give plads til søgefeltet */
+            background-color: var(--dark-blue);
             background-image: linear-gradient(rgba(11, 30, 59, 0.75), rgba(11, 30, 59, 0.75)), 
                               url('forside-billede.jpg'),
                               url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2000&auto=format&fit=crop');
@@ -60,10 +59,47 @@
             align-items: center;
             color: var(--white);
             text-align: center;
+            padding: 0 20px;
         }
 
         .hero-banner h1 { font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-banner p { font-size: 1.3rem; margin-top: 10px; opacity: 0.95; font-weight: 300; }
+        .hero-banner p { font-size: 1.3rem; margin-top: 10px; opacity: 0.95; font-weight: 300; margin-bottom: 30px; }
+
+        /* --- SØGEFELT --- */
+        .search-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            background: white;
+            padding: 5px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: var(--accent-gold);
+            color: var(--dark-blue);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #b08d4a;
+        }
 
         /* --- OPDELEDE DIVISIONER --- */
         .main-content {
@@ -188,6 +224,11 @@
 <section class="hero-banner">
     <h1>Støt din klub fra tribunen</h1>
     <p>Køb dine billetter til alle kampe i 2. og 3. division på Divisionsbilletter.dk</p>
+    
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Søg efter din klub her...">
+        <button class="search-button">Søg</button>
+    </div>
 </section>
 
 <main class="main-content">
@@ -198,6 +239,7 @@
         <section class="division-column">
             <div class="division-header">
                 <img src="CampoBet 2. Division logo.png" alt="2. Division">
+                <h2>2. Division</h2>
             </div>
             <div class="club-grid">
                 <a href="#" class="club-card"><img src="CampoBet 2. Division - AB Gladsaxe.png" alt=""><p>AB Gladsaxe</p></a>
